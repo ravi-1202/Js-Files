@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // localStorage.setItem('key','value')
+        // localStorage.getItem('key')
+
+
+        //Store direct value
+        // localStorage.setItem('Name','Gita')
+        // localStorage.setItem('City','Bhagur')
+        // let City=localStorage.getItem('Name')
+        // console.log(City)
+
+        //Store value by taking the variable
+        // let name = 'Ravi Somase'
+        // localStorage.setItem('name1',name)
+        // let n = localStorage.getItem('name1')
+        // console.log(n)
+
+        //Store value  in the form of array
+        // let Employee = ['Pooja','Samrudhhi','Akanksha','Monika','Gita']
+        // // localStorage.setItem('Emp',Employee)
+        // localStorage.setItem('Emp1',JSON.stringify(Employee))
+        // let em = localStorage.getItem('Emp1')
+        // console.log(em)
+
+        /*
+        //Store value in the form of object
+        let stud = {
+            Name1 : 'Rohini Tribhuvan',
+            Age:19,
+            City:'Nimgaon',
+            Edu:'CED'
+        }
+        localStorage.setItem('stud1',JSON.stringify(stud))
+        let student = localStorage.getItem('stud1')
+        console.log(student)
+        */
+
+
+        //Store the value in the form of array of object
+        let obj=[
+            {id:101,Name:'Pankaj',City:'Vaijapur'},
+            {id:102,Name:'Vaishnavi',City:'Nimgaon'},
+            {id:103,Name:'Valmik',City:'Nimgaon'},
+            {id:104,Name:'Ram',City:'Bihar'},
+            {id:105,Name:'Devyani',City:'Gangapur'},
+            {id:106,Name:'Shrddha',City:'Vaijapur'}
+
+        ]
+        localStorage.setItem('obj1',JSON.stringify(obj))
+        let Obj = localStorage.getItem('obj1')
+        console.log(Obj)
+    </script>
+</head>
+<body>
+    
+
+
+</body>
+</html>

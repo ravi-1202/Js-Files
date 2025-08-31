@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    let rows = ``;
+
+    fetch('https://dummyjson.com/users')
+    .then((res)=>res.json())
+    .then((user)=>{
+
+        // console.log(user.users)//Shows the user data in the form of array
+        let ur = user.users
+        ur.map((use)=>{
+
+            rows +=
+            `
+            <tr>
+            <th>${use.id}</th><th>${use.firstName}</th><th>${use.lastName}</th><th>${use.maidenName}</th><th>${use.age}</th><th>${use.gender}</th><th>${use.email}</th><th>${use.phone}</th><th>${use.username}</th><th>${use.password}</th><th>${use.birthdate}</th><th><img src="${use.image}" alt="User Image" width="50" height="50"></th><th>${use.bloodGroup}</th><th>${use.height}</th><th>${use.weight}</th><th>${use.eyeColor}</th><th>${use.hair.color}</th><th>${Object.values(use.address)}</th>
+        </tr>
+            `
+
+
+        })
+        document.getElementById('tbody').innerHTML=rows
+    })
+
+</script>
+<body>
+    
+    <table border="1">
+        <tr>
+            <th>Id</th><th>First Name</th><th>Last Name </th><th>Midel Name</th><th>Age</th><th>Gender</th><th>Email</th><th>Phone</th><th>Username</th><th>Password</th><th>DOB</th><th>Image</th><th>Blood Group</th><th>Height</th><th>Weight</th><th>Eye Color</th><th>Hair</th><th  >Address</th>
+        </tr>
+        
+            <tbody id="tbody"></tbody>
+    </table>
+
+</body>
+</html>

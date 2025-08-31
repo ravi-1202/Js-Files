@@ -1,0 +1,33 @@
+<script>
+
+    let arr = [10,20,30,40,10,20,-40,50,80]
+    // console.log(arr)
+    // console.log(arr.lastIndexOf(10))//to find the last index of the element just add last at the start of the method i.e. lastIndexOf
+    // console.log(arr.includes(30))
+    /*
+    arr.find((value)=>{
+
+        return value > 0
+    })
+        */
+
+        let Employees = [
+        {id:102,name:'Mahesh',sal:120000,role:'Backend Enginerer'},
+        {id:109,name:'Ravi',sal:125000,role:'Software Tester'},
+        {id:115,name:'Rahul',sal:105000,role:'Front-end Enginerer'},
+        {id:112,name:'Kiran',sal:60000,role:'Java Developer'},
+        {id:111,name:'Rakesh',sal:50000,role:'Data Science Enginerer'},
+        {id:99,name:'Akash',sal:20000,role:'Java Intern'},
+        {id:155,name:'Rohit',sal:35000,role:'Designer'}
+        ]
+
+        let Eid=Number(prompt('Enter the id'))
+        let mystud = Employees.find((e)=> Eid === e.id  )
+	    console.log(mystud)
+        // {id: 111, name: 'Rakesh', sal: 50000, role: 'Data Science Enginerer'}
+
+       
+        let myIndex = Employees.findIndex((e)=> Eid === e.id)
+        console.log(myIndex)
+
+</script>

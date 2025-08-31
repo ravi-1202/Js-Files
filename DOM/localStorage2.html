@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function save()
+        {
+
+            let name = document.getElementById('txt_name').value
+            let Mo_no = document.getElementById('txt_number').value
+            let age = document.getElementById('txt_age').value
+            let city = document.getElementById('txt_city').value
+
+            if(name=="" || Mo_no == "" || age=="" || city=="")
+            {
+                alert('Do not leave Empty')
+            }
+                    
+            else{
+            let Stud1 = {
+                name,Mo_no,age,city
+            }
+
+            let old =localStorage.getItem('students')
+            let old2 = old ? JSON.parse(old) : []
+            old2.push(Stud1)
+
+            localStorage.setItem('students',JSON.stringify(old2))
+            alert('Data saved')
+            clear()
+            show()
+        }
+        }
+        function clear(){
+
+            document.getElementById('txt_name').value = ''
+            document.getElementById('txt_number').value =''
+            document.getElementById('txt_age').value = ''
+            document.getElementById('txt_city').value = ''
+
+        }
+        function show()
+		{
+			let old = localStorage.getItem('students')
+			let old2 = old ? JSON.parse(old) : []
+			let rows = ``;
+
+                old2.map((s,index)=>{
+                    rows += `<tr>
+                            <th>${s.name}</th><th>${s.Mo_no}</th><th>${s.age}</th> <th>${s.city}</th>
+                        <th>
+                            <button onclick= "del(${index})">Del</button>
+                        </th>
+                            </tr>`
+                })
+
+			document.getElementById('tbody').innerHTML = rows
+		}
+
+        function del(index){
+
+            let old = localStorage.getItem('students')
+            let old2 = old ? JSON.parse(old) : []
+
+            old2.splice(index,1)
+            alert('Data Deleted')
+
+            localStorage.setItem('students',JSON.stringify(old2))
+            show()
+        }
+   </script>
+</head>
+<body onload="show()">
+    <h2>Registration Form</h2>
+    Name : <input type="text" id="txt_name">
+    <br><br>
+    Mo.no:<input type="number" id="txt_number">
+    <br><br>
+    Age:<input type="number" id="txt_age">
+    <br><br>
+    City:<input type="text" id="txt_city">
+    <br><br>
+    <button onclick="save()">Save</button>
+    
+    <table border="1">
+        <tr>
+            <th>Name</th><th>Mo.no</th><th>Age</th><th>City</th><th>Options</th>
+        </tr>
+        
+            <tbody id="tbody"></tbody>
+        
+    </table>
+</body>
+</html>

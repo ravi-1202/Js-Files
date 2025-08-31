@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function change()
+        {
+            // document.getElementById('id1').innerText = "Hello Porgramer"
+            //it change the innertext of div or other tags
+
+            document.getElementById('id1').innerHTML="<h2>Hide me</h2>"
+            //it change the tag of the text or it direct edit the tag of html
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div id="id1">
+        Hello world
+    </div>
+
+    <button onclick="change()">Click me</button>
+</body>
+</html>
